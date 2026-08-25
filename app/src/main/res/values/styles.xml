@@ -1,0 +1,8 @@
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/pos_primary</item>
+        <item name="colorPrimaryDark">@color/pos_primary_dark</item>
+        <item name="colorAccent">@color/pos_primary</item>
+        <item name="android:windowBackground">@color/pos_bg</item>
+    </style>
+</resources>

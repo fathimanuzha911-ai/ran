@@ -1,0 +1,14 @@
+<resources>
+    <color name="pos_primary">#0b73d9</color>
+    <color name="pos_primary_dark">#063865</color>
+    <color name="pos_primary_deep">#064e9c</color>
+    <color name="pos_success">#10b453</color>
+    <color name="pos_warning">#ff9f12</color>
+    <color name="pos_danger">#dc2626</color>
+    <color name="pos_bg">#f4f8fd</color>
+    <color name="pos_surface">#ffffff</color>
+    <color name="pos_text">#111827</color>
+    <color name="pos_muted">#7b8798</color>
+    <color name="pos_line">#d8e5f5</color>
+    <color name="pos_soft_blue">#e8f3ff</color>
+</resources>
