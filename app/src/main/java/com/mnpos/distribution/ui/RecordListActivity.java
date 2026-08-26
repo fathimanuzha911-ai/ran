@@ -165,11 +165,17 @@ public class RecordListActivity extends Activity {
 
     private void setupFab() {
         FloatingActionButton fab = findViewById(R.id.addFab);
-        if (spec.createFields != null) {
+        String specKey = getIntent().getStringExtra("specKey");
+        if ("sales_orders".equals(specKey)) {
+            // Order-taking needs multi-line product entry, so it gets its
+            // own dedicated screen instead of the generic single-field form.
+            fab.setVisibility(View.VISIBLE);
+            fab.setOnClickListener(v -> startActivity(new Intent(this, OrderActivity.class)));
+        } else if (spec.createFields != null) {
             fab.setVisibility(View.VISIBLE);
             fab.setOnClickListener(v -> {
                 Intent intent = new Intent(this, RecordFormActivity.class);
-                intent.putExtra("specKey", getIntent().getStringExtra("specKey"));
+                intent.putExtra("specKey", specKey);
                 startActivity(intent);
             });
         }

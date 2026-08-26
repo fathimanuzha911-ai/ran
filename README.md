@@ -59,11 +59,17 @@ security boundary.
    fewer than 30 rows returned means "last page." Confirm that matches your
    API — if it doesn't paginate server-side, everything still works, it'll
    just fetch everything on page 1 and stop.
-4. **Sales Orders / Stock Requests creation.** These need multi-line
-   product entry (like Stock Transfer), which doesn't fit the generic
-   single-field form, so they're currently **view-only** in this build. Use
-   `StockTransferActivity.java` as the template if you want to add order
-   creation — it already has the search-and-add-line-item pattern.
+4. **Order taking is now built in** (`OrderActivity.java`, reachable from
+   the "Take Order" menu item and the `+` button on the Sales Orders
+   screen): search/select a customer, search/add products with editable
+   qty and price, see a running total, submit. It posts to
+   `/api/mobile/sales-orders` using the exact body shape the original
+   `PosActivity.saveOrder()` used (`status: "ordered"`, `items[]` with
+   `product_id`/`variation_id`/`quantity`/`unit_price`), so it should work
+   against your backend as-is. **Stock Request creation** still isn't
+   built — use `StockTransferActivity.java` or `OrderActivity.java` as the
+   template if you need that next, since both already have the
+   search-and-add-line-item pattern.
 
 ## Extending
 

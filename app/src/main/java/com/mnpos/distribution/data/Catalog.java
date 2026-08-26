@@ -142,6 +142,7 @@ public final class Catalog {
         RECORDS.put("daily_products", dailyProducts);
 
         // ---- Role-gated menu (checked top to bottom, tier is a floor) ----
+        MENU.add(new MenuItem("Take Order", null, "take_order", TIER_SALES_REP, "sell.create"));
         MENU.add(new MenuItem("Customers", "customers", null, TIER_SALES_REP, "customer.view", "customer.view_own"));
         MENU.add(new MenuItem("Sales Orders", "sales_orders", null, TIER_SALES_REP));
         MENU.add(new MenuItem("Sales", "sales", null, TIER_SALES_REP));

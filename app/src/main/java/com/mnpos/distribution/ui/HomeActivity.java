@@ -65,6 +65,10 @@ public class HomeActivity extends Activity {
             startActivity(new Intent(this, StockTransferActivity.class));
             return;
         }
+        if ("take_order".equals(item.activityTag)) {
+            startActivity(new Intent(this, OrderActivity.class));
+            return;
+        }
         Intent intent = new Intent(this, RecordListActivity.class);
         intent.putExtra("specKey", item.specKey);
         startActivity(intent);
